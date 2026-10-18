@@ -16,6 +16,13 @@
     node.classList.toggle('error', isError);
   };
   const show = (id, visible) => { const node = byId(id); if (node) node.hidden = !visible; };
+  const canonical = (value) => {
+    if (Array.isArray(value)) return `[${value.map(canonical).join(',')}]`;
+    if (value && typeof value === 'object') {
+      return `{${Object.keys(value).sort().map(key => `${JSON.stringify(key)}:${canonical(value[key])}`).join(',')}}`;
+    }
+    return JSON.stringify(value);
+  };
   const snapshot = () => {
     const result = {};
     for (const key of STORAGE_KEYS) {
@@ -87,9 +94,16 @@
         return;
       }
       if (row && row.data && typeof row.data === 'object') {
-        applySnapshot(row.data);
-        status('Cloud atlas loaded. Refreshing the page…');
-        setTimeout(() => location.reload(), 300);
+        const cloudData = row.data;
+        const localData = snapshot();
+        const changed = STORAGE_KEYS.some(key => canonical(localData[key] ?? null) !== canonical(cloudData[key] ?? null));
+        if (changed) {
+          applySnapshot(cloudData);
+          status('Cloud atlas loaded. Refreshing the page…');
+          setTimeout(() => location.reload(), 300);
+        } else {
+          status('Cloud atlas is up to date.');
+        }
       } else {
         await saveCloud(true);
       }
