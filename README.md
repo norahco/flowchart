@@ -1,27 +1,27 @@
 # Fandom Character Atlas
 
-A GitHub Pages-ready, static fandom library and character relationship atlas.
+A GitHub Pages ready, static fandom library and character relationship atlas.
 
-## Features
+## Included
 
-- Arabic / English interface switch.
-- Fandom library organized by manga, anime, Korean web novels, Chinese web novels, and fanfiction.
-- Search by title, category, language, and tags.
-- Add, edit, and delete fandom entries; the **Add fandom** button opens a type chooser for manga, anime, Korean/Chinese web novels, or fanfiction. Define groups, the map's central character, and tags.
-- Semi-Coercive Imperialist is preloaded in the fandom library with its existing character atlas and spoiler notes.
-- Open a fandom to view its character map, profiles, relationships, chapter notes, and spoiler controls.
-- Add or edit characters, relationship details, tags, and chapter notes in Arabic and English.
-- Browser-local saving plus JSON export/import for backups or moving data to another device.
+- English is the default interface. Use the language button to switch to Arabic.
+- A fandom library organized by manga, anime, Korean web novels, Chinese web novels, and fanfiction. Semi-Coercive Imperialist is already included.
+- Search and tags for fandoms, characters, and ships.
+- Character cards with backgrounds, group colors, and spoiler controls. Add characters from **Add character**.
+- A **Ships** section with the 43 pairings from the workbook, plus tools to add and remove your own pairings by choosing two characters.
+- Offline autocomplete data from the workbook: 39,926 fandom/work titles, 383 tropes, and names in its existing pairings. New character names are also suggested from the selected fandom’s character list.
+- JSON export/import for fandoms, characters, chapter notes, and custom ships.
+- Optional Supabase email sign-in and cloud sync. Sign in on another device to load the same atlas.
 
-## Publish on GitHub Pages
+## Put it on GitHub Pages
 
 1. Extract the ZIP.
-2. Upload `index.html`, `app.js`, and `.nojekyll` to the repository root. `README.md` is optional.
-3. Open **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**, then choose `main` and `/(root)`, and save.
-4. After the deployment completes, open the URL shown in the Pages settings.
+2. Upload all files inside `Fandom_Character_Atlas` to the root of your GitHub repository: `index.html`, `app.js`, `ship-data.js`, `.nojekyll`, and optionally `README.md`.
+3. Open **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/(root)`, then save.
+4. After deployment, open the Pages URL shown in the settings.
 
-## Your edits and backups
+## Saving and database behavior
 
-Fandoms, characters, tags, and notes save in the browser on the device where you edit them. They do not automatically change the files in GitHub. Use **Export data** to download a JSON backup and **Import data** to restore it on another browser/device.
+The workbook data is packaged with the site, so autocomplete works without a server. Your additions and edits are saved in the current browser when signed out. Use the account bar at the top to create an account or sign in; once signed in, the site saves your atlas to your Supabase `public.atlas_data` row and loads it on other devices. The site uses the project URL and a browser-safe publishable key. Keep Row Level Security enabled and never add a secret or service-role key to the site files. Export/Import remains available for backups.
 
-The existing Semi-Coercive Imperialist character notes are in Arabic. The English interface is translated, and the editor has separate Arabic and English fields for new or updated profiles and notes; existing Arabic notes are shown as a fallback until you add English text.
+The original character notes are available in Arabic. In English mode, untranslated Arabic descriptions are left blank rather than shown in Arabic.
