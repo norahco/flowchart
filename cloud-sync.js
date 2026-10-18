@@ -1,6 +1,6 @@
 (() => {
   const CONFIG = window.SUPABASE_CONFIG;
-  const STORAGE_KEYS = ['sciFandoms', 'sciPeople', 'sciArcs', 'sciShips', 'sciShipOverrides', 'sciFandomNames', 'sciGlossary'];
+  const STORAGE_KEYS = ['sciFandoms', 'sciPeople', 'sciArcs', 'sciShips', 'sciShipOverrides', 'sciFandomNames', 'sciGlossary', 'sciMasterCatalog'];
   const client = window.supabase && CONFIG
     ? window.supabase.createClient(CONFIG.url, CONFIG.publishableKey)
     : null;
@@ -47,17 +47,19 @@
     } finally { suppress = false; }
   };
   async function saveCloud(showMessage = false) {
-    if (!client || !currentUser) return;
+    if (!client || !currentUser) return 'local';
     const { error } = await client.from('atlas_data').upsert({
       user_id: currentUser.id,
       data: snapshot()
     }, { onConflict: 'user_id' });
     if (error) {
       status(`Cloud save failed: ${error.message}`, true);
-      return;
+      return 'failed';
     }
     if (showMessage) status('Atlas synced to your account.');
+    return 'synced';
   }
+  window.syncAtlasNow = () => saveCloud(true);
   function scheduleSave() {
     if (!client || !currentUser || suppress) return;
     clearTimeout(saveTimer);
