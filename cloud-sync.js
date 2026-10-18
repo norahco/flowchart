@@ -1,6 +1,6 @@
 (() => {
   const CONFIG = window.SUPABASE_CONFIG;
-  const STORAGE_KEYS = ['sciFandoms', 'sciPeople', 'sciArcs', 'sciShips'];
+  const STORAGE_KEYS = ['sciFandoms', 'sciPeople', 'sciArcs', 'sciShips', 'sciShipOverrides'];
   const client = window.supabase && CONFIG
     ? window.supabase.createClient(CONFIG.url, CONFIG.publishableKey)
     : null;
