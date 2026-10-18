@@ -1,15 +1,27 @@
-# خريطة الشخصيات — Semi-Coercive Imperialist
+# Fandom Character Atlas
 
-## رفع الصفحة على GitHub Pages
+A GitHub Pages-ready, static fandom library and character relationship atlas.
 
-1. نزّلي وافتحي ملف ZIP.
-2. أنشئي مستودعًا جديدًا على GitHub.
-3. ارفعي الملفات الثلاثة الموجودة داخله إلى جذر المستودع: `index.html` و`app.js` و`.nojekyll`.
-4. افتحي **Settings → Pages**، واختاري **Deploy from a branch**، ثم `main` و`/(root)` واحفظي.
-5. بعد اكتمال النشر، يفتح الموقع من الرابط الذي يعرضه GitHub Pages.
+## Features
 
-## تعديل بيانات الخريطة
+- Arabic / English interface switch.
+- Fandom library organized by manga, anime, Korean web novels, Chinese web novels, and fanfiction.
+- Search by title, category, language, and tags.
+- Add, edit, and delete fandom entries; the **Add fandom** button opens a type chooser for manga, anime, Korean/Chinese web novels, or fanfiction. Define groups, the map's central character, and tags.
+- Semi-Coercive Imperialist is preloaded in the fandom library with its existing character atlas and spoiler notes.
+- Open a fandom to view its character map, profiles, relationships, chapter notes, and spoiler controls.
+- Add or edit characters, relationship details, tags, and chapter notes in Arabic and English.
+- Browser-local saving plus JSON export/import for backups or moving data to another device.
 
-الزر **إضافة / تعديل** يسمح بإضافة شخصية أو تعديل اسمها وخلفيتها وعلاقاتها وفصيلها. زر **إظهار الحرق بعد ٩٠** يكشف الشخصيات والملاحظات المستقبلية. ويمكن إضافة أو تعديل ملاحظات الفصول من قسم الحرق.
+## Publish on GitHub Pages
 
-التعديلات تُحفظ محليًا في المتصفح والجهاز الذي تستخدمينه. استخدمي **تصدير نسخة** للاحتفاظ بملف JSON أو نقله إلى جهاز آخر، و**استيراد نسخة** لاسترجاعه. تعديل البيانات بهذه الطريقة لا يغيّر ملفات GitHub نفسها.
+1. Extract the ZIP.
+2. Upload `index.html`, `app.js`, and `.nojekyll` to the repository root. `README.md` is optional.
+3. Open **Settings → Pages**. Under **Build and deployment**, select **Deploy from a branch**, then choose `main` and `/(root)`, and save.
+4. After the deployment completes, open the URL shown in the Pages settings.
+
+## Your edits and backups
+
+Fandoms, characters, tags, and notes save in the browser on the device where you edit them. They do not automatically change the files in GitHub. Use **Export data** to download a JSON backup and **Import data** to restore it on another browser/device.
+
+The existing Semi-Coercive Imperialist character notes are in Arabic. The English interface is translated, and the editor has separate Arabic and English fields for new or updated profiles and notes; existing Arabic notes are shown as a fallback until you add English text.
