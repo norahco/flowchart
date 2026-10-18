@@ -5,10 +5,11 @@ A GitHub Pages ready, static fandom library and character relationship atlas.
 ## Included
 
 - English is the default interface. Use the language button to switch to Arabic.
+- A sidebar with separate Fandoms and Ships pages. The current page is remembered after refresh.
 - A fandom library organized by manga, anime, Korean web novels, Chinese web novels, and fanfiction. Semi-Coercive Imperialist is already included.
 - Search and tags for fandoms, characters, and ships.
 - Character cards with backgrounds, group colors, and spoiler controls. Add characters from **Add character**.
-- A **Ships** section with the 43 pairings from the workbook, plus tools to add and remove your own pairings by choosing two characters.
+- A standalone **Ships** page available from the sidebar, with the 43 pairings from the workbook. Add and remove custom pairings across fandoms; choose the fandom when adding a ship.
 - Offline autocomplete data from the workbook: 39,926 fandom/work titles, 383 tropes, and names in its existing pairings. New character names are also suggested from the selected fandom’s character list.
 - JSON export/import for fandoms, characters, chapter notes, and custom ships.
 - Optional Supabase email sign-in and cloud sync. Sign in on another device to load the same atlas.
